@@ -18,13 +18,23 @@ describe("function reverseString()", () => {
 
 describe("object calculator", () => {
     test("Contains multiply", () => {
-        expect(calculator).toHaveProperty('multiply');
+        expect(calculator).toHaveProperty("multiply");
     });
     test("multiply 2 * 2 = 4", () => {
         expect(calculator.multiply(2, 2)).toBe(4);
     }); 
     test("multiply 4 * 4 = 16", () => {
         expect(calculator.multiply(4, 4)).toBe(16);
+    });
+
+    test("Contains add", () => {
+        expect(calculator).toHaveProperty("add");
+    });
+    test("add 2 and 2 = 4", () => {
+        expect(calculator.add(2, 2)).toBe(4);
+    });
+    test("add 4 and 4 = 8", () => {
+        expect(calculator.add(4, 4)).toBe(8);
     });
 });
 
