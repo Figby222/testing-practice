@@ -3,4 +3,13 @@ function capitalize(string) {
     return result;
 }
 
-export { capitalize };
+function reverseString(string) {
+    let result = "";
+    for (let i = string.length - 1; i >= 0; i-=1) {
+        result += string[i];
+    }
+
+    return result;
+}
+
+export { capitalize, reverseString };
