@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from './index.js';
+import { capitalize, reverseString, calculator } from './index.js';
 
 test("capitalize('awesome') returns 'Awesome'", () => {
     expect(capitalize("awesome")).toBe("Awesome");
@@ -13,6 +13,18 @@ describe("function reverseString()", () => {
     });
     test("Reverses 'World!'", () => {
         expect(reverseString("World!")).toBe("!dlroW");
+    });
+});
+
+describe("object calculator", () => {
+    test("Contains multiply", () => {
+        expect(calculator).toHaveProperty('multiply');
+    });
+    test("multiply 2 * 2 = 4", () => {
+        expect(calculator.multiply(2, 2)).toBe(4);
+    }); 
+    test("multiply 4 * 4 = 16", () => {
+        expect(calculator.multiply(4, 4)).toBe(16);
     });
 });
 

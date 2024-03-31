@@ -12,4 +12,8 @@ function reverseString(string) {
     return result;
 }
 
-export { capitalize, reverseString };
+const calculator = {
+    multiply: (n1, n2) => n1 * n2
+};
+
+export { capitalize, reverseString, calculator };
