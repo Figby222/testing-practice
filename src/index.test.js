@@ -36,6 +36,26 @@ describe("object calculator", () => {
     test("add 4 and 4 = 8", () => {
         expect(calculator.add(4, 4)).toBe(8);
     });
+
+    test("Contains subtract", () => {
+        expect(calculator).toHaveProperty("subtract");
+    });
+    test("subtract 10 and 6 = 4", () => {
+        expect(calculator.subtract(10, 6)).toBe(4);
+    });
+    test("subtract 20 and 12 = 8", () => {
+        expect(calculator.subtract(20, 12)).toBe(8);
+    });
+
+    test("Contains divide", () => {
+        expect(calculator).toHaveProperty("divide");
+    })
+    test("Divide 8 and 2 = 4", () => {
+        expect(calculator.divide(8, 2)).toBe(4);
+    })
+    test("Divide 64 and 16 = 4", () => {
+        expect(calculator.divide(48, 8)).toBe(6);
+    })
 });
 
 // test("Capitalize A in awesome", () => {
