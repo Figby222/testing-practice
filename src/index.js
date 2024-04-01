@@ -46,4 +46,46 @@ function caesarCipher(plaintext, offset, alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     return result;
 }
-export { capitalize, reverseString, calculator, caesarCipher, getCipherAlphabet };
+
+function getAverage(array) {
+    let accumulator = 0;
+    for (let i = 0; i < array.length; i+=1) {
+        accumulator += array[i];
+    }
+
+    return accumulator / array.length;
+}
+
+function getMin(array) {
+    let min = array[0];
+    for (let i = 1; i < array.length; i+=1) {
+        min = array[i] < min ? array[i] : min;
+    }
+    return min;
+}
+
+function getMax(array) {
+    let max = array[0];
+    for (let i = 1; i < array.length; i+=1) {
+        max = array[i] > max ? array[i] : max;
+    }
+    return max;
+}
+
+function getLength(array) {
+    let length = 0;
+    for (let i = 0; i < array.length; i+=1) {
+        length+=1;
+    }
+    return length;
+}
+
+function analyzeArray(array) {
+    return {
+        average: getAverage(array),
+        min: getMin(array),
+        max: getMax(array),
+        length: getLength(array)
+    }
+}
+export { capitalize, reverseString, calculator, caesarCipher, getCipherAlphabet, analyzeArray };

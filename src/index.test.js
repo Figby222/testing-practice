@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher, getCipherAlphabet } from "./index.js";
+import { capitalize, reverseString, calculator, caesarCipher, getCipherAlphabet, analyzeArray } from "./index.js";
 
 test("capitalize('awesome') returns 'Awesome'", () => {
     expect(capitalize("awesome")).toBe("Awesome");
@@ -75,6 +75,37 @@ describe("Caesar Cipher", () => {
     })
 });
 
+describe("analyzeArray()", () => {
+    test("check if average in array", () => {
+        expect(analyzeArray([6, 4, 0, 0, 1, 1])).toHaveProperty("average");
+    })
+
+    test ("check if average in array has proper value", () => {
+        expect(analyzeArray([6, 4, 0, 0, 1, 1])).toHaveProperty("average", 2);
+    })
+
+    test("check if min in array", () => {
+        expect(analyzeArray([6, 4, 0, 0, 1, 1])).toHaveProperty("min");
+    })
+    test("check if min in array has proper value", () => {
+        expect(analyzeArray([6, 4, 0, 0, 1, 1])).toHaveProperty("min", 0);
+    })
+
+    test("check if max in array", () => {
+        expect(analyzeArray([6, 4, 0, 0, 1, 1])).toHaveProperty("max");
+    })
+    test("check if max in array has proper value", () => {
+        expect(analyzeArray([6, 4, 0, 0, 1, 1])).toHaveProperty("max", 6);
+    })
+
+    test("check if length exists in array", () => {
+        expect(analyzeArray([6, 4, 0, 0, 1, 1])).toHaveProperty("length");
+    })
+
+    test("check if length has proper value in array", () => {
+        expect(analyzeArray([6, 4, 0, 0, 1, 1])).toHaveProperty("length", 6);
+    })
+})
 // test("Capitalize A in awesome", () => {
 //     expect(capitalize("awesome").toBe("Awesome"));
 // });
