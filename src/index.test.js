@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from './index.js';
+import { capitalize, reverseString, calculator, caesarCipher, getCipherAlphabet } from "./index.js";
 
 test("capitalize('awesome') returns 'Awesome'", () => {
     expect(capitalize("awesome")).toBe("Awesome");
@@ -49,12 +49,29 @@ describe("object calculator", () => {
 
     test("Contains divide", () => {
         expect(calculator).toHaveProperty("divide");
-    })
+    });
     test("Divide 8 and 2 = 4", () => {
         expect(calculator.divide(8, 2)).toBe(4);
-    })
+    });
     test("Divide 64 and 16 = 4", () => {
         expect(calculator.divide(48, 8)).toBe(6);
+    });
+});
+
+describe("Caesar Cipher", () => {
+    test("Passing ('hello', 1) returns 'IFMMP'", () => {
+        expect(caesarCipher("hello", 1)).toBe("IFMMP");
+    });
+    test("Passing ('cookies', 3) returns 'FRRNLHV'", () => {
+        expect(caesarCipher("cookies", 3)).toBe("FRRNLHV");
+    });
+
+    test("getCipherAlphabet(3) returns DEFGHIJKLMNOPQRSTUVWXYZABC", () => {
+        expect(getCipherAlphabet(3)).toBe("DEFGHIJKLMNOPQRSTUVWXYZABC")
+    })
+
+    test("caesarCipher('hello', -3) returns 'EBIIL'", () => {
+        expect(caesarCipher("hello", -3)).toBe("EBIIL");
     })
 });
 
